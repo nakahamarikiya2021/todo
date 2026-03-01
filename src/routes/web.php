@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\testController;
+use App\Http\Controllers\TodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +18,7 @@ use App\Http\Controllers\testController;
 //    return view('welcome');
 //});
 
-Route::get('/', [testController::class,'index']);
+Route::get('/', [TodoController::class,'index']);
+Route::post('/todos', [TodoController::class,'store']);
+Route::patch('/todos/update', [TodoController::class,'update']);
+Route::delete('/todos/delete', [TodoController::class, 'destroy']);
